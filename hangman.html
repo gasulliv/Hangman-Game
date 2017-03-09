@@ -10,7 +10,7 @@
   <form id="inputForm">
     <div class="guessbox">
       <h1>Hint:</h1>
-      <div id="word"></div>
+      <div id="word"></div><br><br>
       <input name="inputBox" type="text" size="10" maxlength="1">
       <input name="guessbutton" type="button" value="Guess" onClick="checkAnswer()">
     </div>
@@ -53,6 +53,7 @@
     var wordField = document.getElementById("word");
 
     function printnewWord(){
+      wordField.innerHTML = "";
       for(var i = 0; i < newWord.length; i++){
         //then we specify each letter
         var letter = document.createTextNode(newWord[i]);
@@ -80,8 +81,6 @@
         }
     }
 
-    var wordField = document.getElementById("inputForm");
-    wordField.innerHTML="";
     printnewWord();
 
     if (!input){
@@ -92,7 +91,7 @@
     //checks if all letters have been found
     var finished = true;
     for (var i = 0; i < newWord.length; i++){
-      if(newWord[i] === "_ "){
+      if(newWord[i] === "_"){
           finished = false;
       }
     }
