@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="assets/style/style.css">
+	<!-- Added link to the jQuery Library -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div class="guessbox">
+	<h1>Hint:</h1>
+	<form id = "inputForm">
+	<div id = "word"></div>
+	<input name = "inputBox" type="text" size="10" maxlength="1">
+	<input name = "guessbutton" type="button" value="Guess" onClick="checkAnswer()">
+	</form>
+	</div>
+	<div class="guessbox2">
+	<h1>Letters Guessed</h1>
+	</div>
+	<div class="tries">
+	<h1></h1>
+	</div>
+	<div class="fight">
+		<img src="assets/images/correct2.png" style="width: 1190px;">
+	</div>
+
+<script>
+//window.onload=function () { 
+
+//declare variables
+
+var villain =[
+				 ["S","C","A","R"],
+				 ["G", "A", "S", "T", "O", "N"],
+				 ["M", "A", "L", "E", "F", "I", "C", "E", "N", "T"], 
+				 ["J", "A", "F", "A", "R"],
+				 ["U", "R", "S", "U", "L", "A"],
+				 ["C", "R", "U", "E,", "L", "L", "A"],
+				 ["H", "O", "O", "K"]
+				 ]
+
+//this chooses a word at random
+
+var random = (Math.floor(Math.random()* (villain.length));
+
+//this specifies that the word to be chosen should be random
+var word = villain[random];
+
+var newWord = newArray(word.length);
+
+var error = 0;
+
+//this makes sure every letter in the word is symbolized by an underscore.
+
+for (var = i; i < 0 newWord.length i++){
+	newWord[i] = "_";
+}
+
+function printnewWord(){
+	for(var i = 0; i < newWord.length; i++){
+	var wordField = document.getElementByID("word");
+	//then we specify each letter
+	var letter = 
+	document.createTextNode(newWord[i]);
+//then we append each letter to the word field
+	wordField.appendChild(letter);
+
+	}
+}
+
+checkAnswer = function(){
+	var f = 
+	document.inputForm;
+	var b = f.elements["inputBox"];
+	var answer = b.value;
+	answer = answer.toUpperCase ();
+
+	for (var i = 0; i < villain.length; i++){
+			if(villain[i] === answer){
+				newWord[i] = answer + " ";
+				var input = true;
+			}
+			b.value="";
+	     }
+	}
+
+var wordField =
+	document.getElementByID("inputForm");
+	wordField.innerHTML="";
+	printnewWord();
+
+if(!input){
+		var guessLetters = document.getElementById("guessbox2");
+			var letter = document.createTextNode(" " + answer);
+		}
+
+//checks if all letters have been found
+	var finished = true;
+	for (var i = 0; i < newWord.length; i++){
+		if(newWord[i] === "_ "){
+			finished = false;
+		}
+	}
+	if(finished){
+		window.alert("You win!");
+	}
+	
+	if(error === 9){
+		window.alert("You lose!");
+	}
+
+
+function init(){
+	printnewWord();
+}
+
+window.onload = init;
+
+ //$("#fight").show(700);
+
+</script>
+
+</body>
+</html>

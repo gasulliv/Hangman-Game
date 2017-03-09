@@ -1,0 +1,65 @@
+body {
+	background-color: black;
+	margin:0px;
+	padding:0px;
+
+}
+
+@font-face {
+    font-family: 'waltographregular';
+    src: url('waltograph42-webfont.woff2') format('woff2'),
+         url('waltograph42-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+h1 {
+	font-family: 'waltographregular';
+}
+
+.guessbox {
+	position:absolute;
+	top:50px;
+	left:25px;
+	color: purple;
+	width: 310px;
+	height:250px;
+	border-radius: 5px;
+	text-align: center;
+
+}
+
+.guessbox2 {
+	position:absolute;
+	top:340px;
+	left:25px;
+	color: purple;
+	width: 310px;
+	height:150px;
+	border-radius: 5px;
+	text-align: center;
+}
+
+#tries {
+	position:absolute;
+	color:purple;
+	width:150px;
+	height: 150px;
+	top:530px;
+	left:100px;
+	text-align: center;
+}
+.fight {
+	position:absolute;
+	margin-left: 350px;
+	margin-top:0px;
+	overflow: hidden;
+	background-color: #181716;
+	border: solid black 10px;
+	border-radius: 20px;
+}
+
+input {
+	color:purple;
+}
